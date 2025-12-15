@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VOD Master for KICK</title>
+  <style>
+    body {
+      width: 350px;
+      background-color: #0b0e0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+    h2 {
+      margin-top: 0;
+      color: #53fc18;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-size: 11px;
+      color: #888;
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      background: #191b1f;
+      border: 1px solid #333;
+      color: white;
+      padding: 8px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: monospace;
+    }
+    button {
+      background-color: #53fc18;
+      color: black;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+    button:hover {
+      background-color: #42b812;
+    }
+    #status {
+      margin-top: 15px;
+      font-size: 12px;
+      padding: 10px;
+      background: #191b1f;
+      border-radius: 4px;
+      min-height: 20px;
+      color: #ccc;
+      border: 1px solid #333;
+    }
+    .hidden {
+      display: none;
+    }
+    #result-area {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #333;
+    }
+    .helper-text {
+      font-size: 10px;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>VOD Master for KICK</h2>
+
+  <div class="input-group">
+    <label>CHANNEL SLUG</label>
+    <input type="text" id="slug-input" placeholder="e.g. xqc">
+    <button id="btn-fetch">Get VOD URL</button>
+  </div>
+
+  <div id="status">Ready. Go to a Kick channel.</div>
+
+  <div id="result-area" class="hidden">
+    <label id="result-label">VOD URL</label>
+    <input type="text" id="vod-link" readonly onclick="this.select()">
+    <button id="btn-copy">Copy to Clipboard</button>
+    <div id="fallback-msg" class="helper-text hidden">
+      Note: API returned 404. This is the public video link.
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

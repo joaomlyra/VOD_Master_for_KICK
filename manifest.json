@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "VOD Master for KICK",
+  "version": "1.0",
+  "description": "Extracts streaming URLs via V2 API and Network Sniffing",
+  "permissions": [
+    "webRequest",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.kick.com/*",
+    "*://*.live-video.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "VOD Master for KICK"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
